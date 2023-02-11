@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-brand--1: #ffb545;
+    --color-brand--2: #00c46a;
+  
+    --color-dark--1: #2d3439;
+    --color-dark--2: #42484d;
+    --color-light--1: #aaa;
+    --color-light--2: #ececec;
+    --color-light--3: rgb(214, 222, 224);
+  }
+
+#map { 
+    height : 100%;
+
+}
+
+.item-container{
+    @apply  flex justify-between items-center p-4 shadow-sm cursor-pointer
+}
+
+.order-start{
+    @apply flex justify-start items-center;
+}
+
+.color-container{
+    @apply w-8 h-8 rounded-full cursor-pointer;
+}
+
+.item-title{
+    @apply text-gray-400
+}
+
+
+/* Toggle A */
+input:checked ~ .dot {
+    transform: translateX(100%);
+    background-color: #48bb78;
+  }
+
+.input{
+    @apply rounded-2xl bg-white dark:text-white dark:bg-slate-700 dark:border-slate-900 border;
+}
+
+/* leaflet */
+.leaflet-popup .leaflet-popup-content-wrapper {
+    background-color: var(--color-dark--1);
+    color: var(--color-light--2);
+    border-radius: 5px;
+    padding-right: 0.6rem;
+}
+
+.leaflet-popup .leaflet-popup-content {
+    font-size: 1.5rem;
+}
+  
+.leaflet-popup .leaflet-popup-tip {
+    background-color: var(--color-dark--1);
+}
+
+.secound-side li{
+    @apply cursor-pointer shadow p-2;
+}

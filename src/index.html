@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mope</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../dist/output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/Mope-Logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+</head>
+
+<body >
+    <!--Container-->
+    <div class=" p-6 py-10  h-[100vh] w-full bg-gray-300 dark:bg-slate-900 relative pl-20">
+
+        <!--Buttons-->
+        <div
+            class="secound-side flex flex-col bg-white absolute h-[330px] w-[60px] bottom-[35%] left-6 rounded-lg items-center justify-center text-3xl dark:text-white dark:bg-slate-800 space-y-6 px-4">
+            <li id="theme" class="fa fa-pencil-square-o hover:text-yellow-600"></li>
+            <li id="trash" class="fa fa-trash-o hover:text-red-600"></li>
+            <li id="checkall" class="fa fa-check-square-o	
+             hover:text-green-600"></li>
+            <li id="uncheckall" class="fa fa-close 	
+             hover:text-blue-600"></li>
+        </div>
+
+        <!--Dashboard Container-->
+        <div class="w-full h-full flex flex-col shadow-xl ">
+
+            <!--Nav-->
+            <div class="bg-white flex border-b dark:border-slate-900 items-center dark:bg-slate-800 ">
+                <!--left nav-->
+                <div class="w-3/6 border-r dark:border-slate-900 py-5">
+                    <!--search Container-->
+                    <div class="px-14 flex justify-center items-center space-x-4">
+                        <img src="../images/Mope-Logo.svg" alt="Logo" class="w-10 h-10  ">
+                        <h1 class="text-gray-700 dark:text-white">Mope || Todo Map!</h1>
+                    </div>
+                </div>
+                <!--Date-->
+                <div class="text-center w-full font-bold ">
+                    <p class="text-slate-700 dark:text-white" id="nav--date">Monday 6, <span class="text-gray-300">Dec
+                            2019</span></p>
+                </div>
+
+            </div>
+
+            <!--main-->
+            <div class="flex w-full h-full overflow-hidden ">
+
+                <!--Side-->
+                <aside class="bg-white dark:bg-slate-800  shadow-6xl overflow-y-scroll w-3/6  border-r py-6   px-2">
+                    <!-- Form -->
+                    <form action="#" id="form"
+                        class=" hidden mx-5 h-[290px] shadow-xl border mb-6 dark:border-slate-900 px-6 py-10 .flex flex-col space-y-6 ">
+                        <div class="order-start space-x-4"><label for="title"
+                                class="dark:text-white font-bold text-gray-700">Title:</label>
+                            <input type="text" id="form--title" name="title" class="input p-2">
+                        </div>
+
+                        <div class="order-start space-x-4"><label for="title"
+                                class="dark:text-white font-bold text-gray-700">Time:</label>
+                            <input id="form--time" type="number" name="title" class="input p-2">
+                        </div>
+
+                        <div class="flex justify-center  space-x-4" id="color--form">
+                            <div class="color-container bg-red-500" id="red"></div>
+                            <div class="color-container bg-green-500" id="green"></div>
+                            <div class="color-container bg-gray-500" id="gray"></div>
+                            <div class="color-container bg-blue-500" id="blue"></div>
+                        </div>
+
+                        <input type="submit" value="Create!" class="px-6  py-2 input w-full">
+                    </form>
+
+                    <!--List-->
+                    <ul class=" flex-col space-y-2 px-4" id="list">
+
+                    </ul>
+                </aside>
+
+
+                <!-- Map -->
+                <div id="map" class="w-full h-full"></div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <!-- Script Tag -->
+    <script src="./app.js"></script>
+    </div>
+
+</body>
+
+</html>
